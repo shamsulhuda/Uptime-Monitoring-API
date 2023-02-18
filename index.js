@@ -1,17 +1,13 @@
-// UpTime monitoring application
+// Title:: UpTime monitoring application
 // Dependencies
 const http = require('http');
 
 const { handleReqRes } = require('./helpers/handleReqRes');
 const environment = require('./helpers/environments');
+const data = require('./lib/data');
 
 // app object - module scaffolding
 const app = {};
-
-// configuration
-// app.config = {
-//     port: 3000,
-// };
 
 // Create server
 app.createServer = () => {
