@@ -31,6 +31,8 @@ handler._token.post = (requestProperties, callback) => {
         requestProperties.body.password.trim().length > 0 
             ? requestProperties.body.password 
             : false;
+
+    console.log(phone,password)
     
     if(phone && password){
         data.read('users', phone, (err1,userData)=>{
