@@ -1,24 +1,19 @@
-// Title:: UpTime monitoring application
-// Dependencies
-const http = require('http');
+// Title:: Project initial file //
 
-const { handleReqRes } = require('./helpers/handleReqRes');
-const environment = require('./helpers/environments');
-const data = require('./lib/data');
+// Dependencies
+const server = require('./lib/server');
+const workers = require('./lib/worker');
 
 // app object - module scaffolding
 const app = {};
 
-// Create server
-app.createServer = () => {
-    const server = http.createServer(app.handleReqRes);
-    server.listen(environment.port, () => {
-        console.log(`Listening to port ${environment.port}`);
-    });
-};
+app.init = () => {
+    // start the server
+    server.init();
+    // start the workers
+    workers.init();
+}
 
-// handle Request Response
-app.handleReqRes = handleReqRes;
+app.init();
 
-// Start server
-app.createServer();
+module.exports = app;
