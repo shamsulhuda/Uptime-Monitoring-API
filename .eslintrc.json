@@ -8,19 +8,22 @@
     "node": true
   },
   "rules": {
+    "no-underscore-dangle": "off",
+    "no-trailing-spaces": "warn",
     "no-console": 0,
     "indent": 0,
     "linebreak-style": 0,
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 100,
-        "tabWidth": 4,
-        "semi": true
-      }
-    ]
+    "prettier/prettier": 0
   },
   "plugins": ["prettier"]
 }
+
+// "prettier/prettier": [
+//   "error",
+//   {
+//     "trailingComma": "es5",
+//     "tabWidth": 4,
+//     "semi": false,
+//     "singleQuote": true
+//   }
+// ]

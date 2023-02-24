@@ -12,7 +12,7 @@ app.init = () => {
     server.init();
     // start the workers
     workers.init();
-}
+};
 
 app.init();
 

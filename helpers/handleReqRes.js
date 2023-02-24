@@ -1,6 +1,5 @@
 // Handle Request Response
 // Dependencies
-const { parse } = require('path');
 const url = require('url');
 const { StringDecoder } = require('string_decoder');
 const routes = require('../routes');
@@ -36,7 +35,9 @@ handler.handleReqRes = (req, res) => {
     req.on('end', () => {
         realData += decoder.end();
         requestProperties.body = parseJSON(realData);
-        chosenHandler(requestProperties, (statusCode, payload) => {
+        chosenHandler(requestProperties, (status, data) => {
+            let statusCode = status;
+            let payload = data;
             statusCode = typeof statusCode === 'number' ? statusCode : 500;
             payload = typeof payload === 'object' ? payload : {};
             const payloadString = JSON.stringify(payload);

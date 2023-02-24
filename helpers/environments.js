@@ -12,8 +12,8 @@ environments.staging = {
     twilio: {
         fromPhone: '+12762779639',
         accountSid: 'AC3b72cafb40984326f0a21dd7d640462c',
-        authToken:'74e00e3c9bdc9683b877d40ac6c10003',
-    }
+        authToken: '3bfcf8e9f765e22bc90f032c66f513ea',
+    },
 };
 environments.production = {
     port: 5000,
@@ -23,16 +23,15 @@ environments.production = {
     twilio: {
         fromPhone: '+12762779639',
         accountSid: 'AC3b72cafb40984326f0a21dd7d640462c',
-        authToken:'74e00e3c9bdc9683b877d40ac6c10003',
-    }
+        authToken: '3bfcf8e9f765e22bc90f032c66f513ea',
+    },
 };
 
 // determine which environment was passed
-const currentEnvironment =
-    typeof process.env.NODE_ENV === 'string' ? process.env.NODE_ENV : 'staging';
+const currentEnvironment = typeof process.env.NODE_ENV === 'string' ? process.env.NODE_ENV : 'staging';
 
 // export corrosponding environment object
-const environmentToExport = typeof (environments[currentEnvironment] === 'object')
+const environmentToExport = typeof (environments[currentEnvironment]) === 'object'
     ? environments[currentEnvironment]
     : environments.staging;
 
